@@ -1,3 +1,9 @@
+/* 
+ * 
+ * Created by MojoAuth Development Team
+   Copyright 2021 MojoAuth.io All rights reserved.
+*/
+
 package com.mojoauth.sdk.helper;
 
 import com.google.gson.Gson;

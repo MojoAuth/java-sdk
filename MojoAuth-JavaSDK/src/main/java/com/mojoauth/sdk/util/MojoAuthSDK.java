@@ -1,3 +1,9 @@
+/* 
+ * 
+ * Created by MojoAuth Development Team
+   Copyright 2021 MojoAuth.io All rights reserved.
+*/
+
 package com.mojoauth.sdk.util;
 
 import java.util.Map;
@@ -12,22 +18,46 @@ public class MojoAuthSDK {
 	public static class Initialize {
 
 		private static String apiKey;
+		private static String modulus;
+		private static String exponent;
 
 		public static void setApiKey(final String apiKey) {
 			Initialize.apiKey = apiKey;
+		}
+		
+		public static void setModulus(final String modulus) {
+			Initialize.modulus = modulus;
+		}
+
+		public static void setExponent(final String exponent) {
+			Initialize.exponent = exponent;
 		}
 
 		public static void setCustomDomain(final String domain) {
 			API_HOST = domain;
 		}
+
 	}
 
 	public static String getApiKey() {
 		return Initialize.apiKey;
 	}
+	
+	public static String getModulus() {
+		return Initialize.modulus;
+	}
+
+	public static String getExponent() {
+		return Initialize.exponent;
+	}
 
 	public static String getDomain() {
 		return API_HOST;
+	}
+
+	public static boolean validateJwk() {
+		return Initialize.exponent == null || Initialize.exponent.length() == 0 || Initialize.modulus == null
+				|| Initialize.modulus.length() == 0 ? false : true;
 	}
 
 	public static boolean validate() {
@@ -41,6 +71,7 @@ public class MojoAuthSDK {
 		}
 	}
 
+	
 	/**
 	 * Creates url after appending loginradius api root url and query parameters
 	 * 
