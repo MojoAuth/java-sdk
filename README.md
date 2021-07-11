@@ -79,8 +79,8 @@ init.setApiKey("___MOJOAUTH_APIKEY___");
 	  This function is used to verify jwt token.
 	  ```
 	public static void check() {
-		String token = "<token>";
-		Jwks jwks = new Jwks();
+	String token = "<token>";
+	Jwks jwks = new Jwks();
 	jwks.verifyAccessToken(token, new AsyncHandler<VerifyTokenResponse>() {
 		
 		@Override
