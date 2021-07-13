@@ -20,7 +20,7 @@ Use the following dependency in your project:
 <dependency>
   <groupId>com.mojoauth.sdk</groupId>
   <artifactId>java-sdk</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 
 ```
@@ -73,32 +73,29 @@ init.setApiKey("___MOJOAUTH_APIKEY___");
 ## Quickstart Guide
 
 
-### MojoAuth API
+### Verify Access Token
 
 
-List of APIs in this Section:
-
- - GET : Verify Access Token
-	  This API is used to verify access token.
+	  This function is used to verify jwt token.
 	  ```
-		MojoAuthApi mojoAuthApi=new MojoAuthApi();
-		String accessToken ="<accessToken>";
-		mojoAuthApi.verifyAccessToken(accessToken,new AsyncHandler<VerifyTokenResponse>() {
-
-			@Override
-			public void onSuccess(VerifyTokenResponse data) {
-				// TODO Auto-generated method stub
-				
-				System.out.println(gson.toJson(data));
-			}
-
-			@Override
-			public void onFailure(ErrorResponse errorcode) {
-				// TODO Auto-generated method stub
-				System.out.println(errorcode.getDescription());
-			}
+	public static void check() {
+	String token = "<token>";
+	Jwks jwks = new Jwks();
+	jwks.verifyAccessToken(token, new AsyncHandler<VerifyTokenResponse>() {
 		
+		@Override
+		public void onSuccess(VerifyTokenResponse data) {
+			System.out.println(data.getAccessToken());
+			System.out.println(data.getIsValid());
+		}
+		
+		@Override
+		public void onFailure(ErrorResponse errorcode) {
+			System.out.println(errorcode.getMessage());
+			System.out.println(errorcode.getDescription());
+		}
 	});
+	}
 
 	  ```
  
