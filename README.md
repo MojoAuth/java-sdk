@@ -1,5 +1,14 @@
   
-# MojoAuth Java SDK
+<p align="center">
+  <a href="https://www.mojoauth.com">
+    <img alt="MojoAuth" src="https://mojoauth.com/assets/images/logo.svg" width="200" />
+  </a>
+</p>
+
+<h1 align="center">
+  MojoAuth JAVA SDK
+</h1>
+
 MojoAuth provides you a robust and secure authentication mechanism for your web & mobile apps with a few lines of code and a delightful user experience.
 
 # Installing
@@ -103,3 +112,13 @@ init.setApiKey("___MOJOAUTH_APIKEY___");
 ## Reference Manual
 
 Please find the reference manual [here](http://mojoauth.com/docs).
+
+## How to contribute
+
+We appreciate all kinds of contributions from anyone, be it finding an issue or writing a blog.
+
+Please check the [contributing guide](CONTRIBUTING.md) to become a contributor.
+
+## License
+
+For more information on licensing, please refer to [License](https://github.com/LoginRadius/engineering-portal/blob/master/LICENSE)
